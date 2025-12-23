@@ -36,12 +36,7 @@ class AppSidebar extends StatelessWidget {
             route: RouteNames.dashboard,
             active: location == RouteNames.dashboard,
           ),
-          ItensSidebar(
-            label: 'Matricular Aluno',
-            icon: Icons.person_add,
-            route: 'route',
-            active: location == 'route',
-          ),
+          
           ItensSidebar(
             label: 'Alunos',
             icon: Icons.people_outline,
