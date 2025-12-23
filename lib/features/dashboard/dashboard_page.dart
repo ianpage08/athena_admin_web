@@ -1,4 +1,5 @@
 import 'package:athena_admin_web/core/widgets/sidebar/app_sidebar.dart';
+import 'package:athena_admin_web/features/dashboard/topbar_usuario.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -12,7 +13,13 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [Expanded(child: AppSidebar())]),
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(children: [Expanded(child: AppSidebar())]),
+          Expanded(child: TopbarUsuario()),
+        ],
+      ),
     );
   }
 }
