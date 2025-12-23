@@ -1,3 +1,4 @@
+import 'package:athena_admin_web/core/widgets/sidebar/app_sidebar.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(children: [Expanded(child: AppSidebar())]),
+    );
   }
 }
