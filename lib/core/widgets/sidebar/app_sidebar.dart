@@ -7,7 +7,7 @@ import 'package:athena_admin_web/core/widgets/sidebar/itens_sidebar.dart';
 class AppSidebar extends StatelessWidget {
   const AppSidebar({super.key});
 
-  static const double sidebarWidth = 300;
+  static const double sidebarWidth = 250;
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,16 @@ class AppSidebar extends StatelessWidget {
 
           // 🔹 MENU
           ItensSidebar(
-            label: 'Dashboard',
+            label: 'Overview',
             icon: Icons.dashboard_outlined,
             route: RouteNames.dashboard,
             active: location == RouteNames.dashboard,
+          ),
+          ItensSidebar(
+            label: 'Matricular Aluno',
+            icon: Icons.person_add,
+            route: 'route',
+            active: location == 'route',
           ),
           ItensSidebar(
             label: 'Alunos',

@@ -10,57 +10,119 @@ class CardMetricas extends StatelessWidget {
       child: GridView.count(
         crossAxisCount: 4,
         shrinkWrap: true,
+        childAspectRatio: 1.8,
         physics: const NeverScrollableScrollPhysics(),
-        crossAxisSpacing: 32,
-        mainAxisSpacing: 32,
-        children: [
-          _cardItem(Icons.people_outline, 'Alunos', '320'),
-          _cardItem(Icons.class_outlined, 'Turmas', '12'),
-          _cardItem(Icons.school_outlined, 'Professores', '18'),
-          _cardItem(Icons.check_circle_outline, 'Presença média', '94%'),
+        crossAxisSpacing: 24,
+        mainAxisSpacing: 24,
+        children: const [
+          _CardItem(
+            icon: Icons.people_outline,
+            title: 'Alunos',
+            value: '320',
+            color: Color(0xFF3B82F6),
+          ),
+          _CardItem(
+            icon: Icons.class_outlined,
+            title: 'Turmas',
+            value: '12',
+            color: Color(0xFF8B5CF6),
+          ),
+          _CardItem(
+            icon: Icons.school_outlined,
+            title: 'Professores',
+            value: '18',
+            color: Color(0xFF22C55E),
+          ),
+          _CardItem(
+            icon: Icons.check_circle_outline,
+            title: 'Presença média',
+            value: '94%',
+            color: Color(0xFF14B8A6),
+          ),
         ],
       ),
     );
   }
+}
 
-  Widget _cardItem(IconData icon, String title, String value) {
+// 🔹 CARD INDIVIDUAL
+class _CardItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String value;
+  final Color color;
+
+  const _CardItem({
+    required this.icon,
+    required this.title,
+    required this.value,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 255, 255, 251),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: const [
           BoxShadow(
-            color: const Color.fromARGB(176, 158, 158, 158).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
+            color: Color(0x14000000),
+            blurRadius: 16,
+            offset: Offset(0, 8),
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Icon(icon, size: 42),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                value,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+          //  BARRA DE STATUS SUPERIOR
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 8,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(12),
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          //  CONTEÚDO
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // ÍCONE
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: color.withOpacity(0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(icon, size: 24, color: color),
                 ),
-              ),
-            ],
+
+                const Spacer(),
+
+                Text(
+                  value,
+                  style: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  title,
+                  style: const TextStyle(fontSize: 14, color: Colors.black54),
+                ),
+              ],
+            ),
           ),
         ],
       ),
