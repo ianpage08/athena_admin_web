@@ -1,5 +1,8 @@
 import 'package:athena_admin_web/core/widgets/sidebar/app_sidebar.dart';
+import 'package:athena_admin_web/features/dashboard/metricas.dart';
 import 'package:athena_admin_web/features/dashboard/topbar_usuario.dart';
+import 'package:athena_admin_web/features/dashboard/widgets/card_metricas.dart';
+import 'package:athena_admin_web/features/dashboard/widgets/placeholder_grafico.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -17,9 +20,25 @@ class _DashboardPageState extends State<DashboardPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(children: [Expanded(child: AppSidebar())]),
-          Expanded(child: TopbarUsuario()),
+          Expanded(
+            child: Column(
+              children: [
+                TopbarUsuario(),
+                _buildHeader(),
+                CardMetricas(),
+                PlaceholderGrafico(),
+              ],
+            ),
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return const Text(
+      'Dashboard',
+      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
     );
   }
 }
