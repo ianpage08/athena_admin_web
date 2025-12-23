@@ -5,35 +5,49 @@ class HeaderAlunos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Alunos',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'Gerencie a lista de alunos  de sua escola',
-              style: TextStyle(fontSize: 12),
-            ),
-          ],
-        ),
-        ElevatedButton.icon(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 🔹 TÍTULO + DESCRIÇÃO
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Alunos',
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 6),
+              Text(
+                'Gerencie a lista de alunos da sua escola',
+                style: TextStyle(fontSize: 14, color: Colors.black54),
+              ),
+            ],
+          ),
+
+          // 🔹 BOTÃO PRINCIPAL
+          ElevatedButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.person_add_alt_1),
+            label: const Text('Matricular aluno'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF22C55E), // verde premium
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              textStyle: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          onPressed: () {},
-          label: Text('Matricular Aluno'),
-          icon: Icon(Icons.add),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
