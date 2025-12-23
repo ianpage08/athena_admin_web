@@ -1,3 +1,4 @@
+import 'package:athena_admin_web/features/dashboard/widgets/atalhos_rapidos.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/card_metricas.dart';
@@ -18,11 +19,14 @@ class DashboardPage extends StatelessWidget {
           const CardMetricas(),
           const SizedBox(height: 24),
 
+          _buildSectionTitle(title: 'Atalhos Rapidos', subtitle: ''),
+          AtalhosRapidos(),
+          const SizedBox(height: 24),
+
           _buildSectionTitle(
             title: 'Desempenho geral',
             subtitle: 'Visão geral do desempenho da escola ao longo do tempo',
           ),
-          const SizedBox(height: 16),
 
           const PlaceholderGrafico(),
         ],
