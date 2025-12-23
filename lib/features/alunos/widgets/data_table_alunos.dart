@@ -112,6 +112,7 @@ class _DataTableAlunosState extends State<DataTableAlunos> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -228,7 +229,7 @@ class _DataTableAlunosState extends State<DataTableAlunos> {
         PopupMenuItem(value: 'editar', child: Text('Editar')),
         PopupMenuItem(value: 'inativar', child: Text('Inativar')),
       ],
-      child: const Icon(Icons.more_horiz, size: 20, color: Colors.black54),
+      child: const Icon(Icons.edit, size: 20, color: Colors.black54),
     );
   }
 }

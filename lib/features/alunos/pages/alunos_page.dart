@@ -1,6 +1,9 @@
+import 'package:athena_admin_web/features/alunos/widgets/alunos_metricas.dart';
 import 'package:athena_admin_web/features/alunos/widgets/alunos_toolbar.dart';
 import 'package:athena_admin_web/features/alunos/widgets/data_table_alunos.dart';
 import 'package:athena_admin_web/features/alunos/widgets/header_alunos.dart';
+import 'package:athena_admin_web/features/alunos/widgets/pagination_skeleton.dart';
+import 'package:athena_admin_web/features/dashboard/widgets/atalhos_rapidos.dart';
 import 'package:flutter/material.dart';
 
 class AlunosPage extends StatelessWidget {
@@ -17,10 +20,15 @@ class AlunosPage extends StatelessWidget {
             children: [
               HeaderAlunos(),
               const SizedBox(height: 24),
+              AtalhosRapidos(),
+              const SizedBox(height: 24),
+              AlunosMetricas(),
 
               AlunosToolbar(),
               const SizedBox(height: 24),
               DataTableAlunos(),
+              const SizedBox(height: 16),
+              PaginationSkeleton(),
             ],
           ),
         ),
