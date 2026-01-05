@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:athena_admin_web/core/navigation/route_names.dart';
 
 class AtalhosRapidos extends StatelessWidget {
   const AtalhosRapidos({super.key});
@@ -16,7 +17,7 @@ class AtalhosRapidos extends StatelessWidget {
             icon: Icons.person_add_alt_1,
             label: 'Matricular aluno',
             color: Color(0xFF3B82F6),
-            route: RouteNames,
+            route: RouteNames.matricula,
           ),
           _ItemAtalho(
             icon: Icons.checklist,
