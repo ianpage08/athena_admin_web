@@ -4,6 +4,7 @@ class RouteNames {
   static const classes = '/classes';
   static const teachers = '/teachers';
   static const reports = '/reports';
+  static const matricula = '/matricula';
 
 
 

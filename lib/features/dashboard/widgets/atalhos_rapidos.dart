@@ -16,7 +16,7 @@ class AtalhosRapidos extends StatelessWidget {
             icon: Icons.person_add_alt_1,
             label: 'Matricular aluno',
             color: Color(0xFF3B82F6),
-            route: '/alunos/novo',
+            route: RouteNames,
           ),
           _ItemAtalho(
             icon: Icons.checklist,

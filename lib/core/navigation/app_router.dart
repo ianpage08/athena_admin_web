@@ -4,7 +4,9 @@ import 'package:athena_admin_web/features/alunos/pages/alunos_page.dart';
 import 'package:athena_admin_web/features/app_layout.dart';
 import 'package:athena_admin_web/features/classe/turmas_page.dart';
 import 'package:athena_admin_web/features/dashboard/dashboard_page.dart';
+import 'package:athena_admin_web/features/nome_a_definir/cadastrar_matricula.dart';
 import 'package:go_router/go_router.dart';
+
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -31,6 +33,7 @@ class AppRouter {
         pageBuilder: (context, state) =>
             const NoTransitionPage(child: NotFoundPage()),
       ),
+      GoRoute(path: RouteNames.matricula, pageBuilder: (context, state) => const NoTransitionPage(child: AppLayout(child: CadastrarMatriculaPage())),),
     ],
   );
 }
